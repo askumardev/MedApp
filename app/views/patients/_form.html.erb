@@ -1,0 +1,86 @@
+<section class="content1">
+  <div class="col-xs-12">
+    <%= form_for(patient, html: {:class => "form-horizontal cr_Form"}) do |f| %>
+      <div class="form-row">
+				<div class="form-group col-md-6">
+					
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">First Name <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :first_name ,:required=>true ,:class=>"form-control", placeholder: "First Name" %>
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">Last Name <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :last_name ,:required=>true ,:class=>"form-control", placeholder: "Last Name" %>
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">Email <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :email ,:required=>true ,:class=>"form-control", placeholder: "Enter Email" %>
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">Mobile <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :mobile_number ,:required=>true ,:class=>"form-control", placeholder: "Enter Prmobileoduct" %>
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">					
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">Address1 <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :address_line1 ,:required=>true ,:class=>"form-control", placeholder: "Enter address1" %>
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">Address2 <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :address_line2 ,:required=>true ,:class=>"form-control", placeholder: "Enter address2" %>
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">					
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">City <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :city ,:required=>true ,:class=>"form-control", placeholder: "Enter city" %>
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">State <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :state ,:required=>true ,:class=>"form-control", placeholder: "Enter State" %>
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">					
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">Country <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :country ,:required=>true ,:class=>"form-control", placeholder: "Enter Country" %>
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label class="control-label col-sm-5 col-md-4" for="team_membr_fname">Zip <span style="color:Red">*</span></label>  
+					<div class="col-sm-7 col-md-8">
+						<%= f.text_field :zip ,:required=>true ,:class=>"form-control", placeholder: "Enter zip code" %>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+  			<div class="col-md-12">
+    			<%= f.submit 'Save',:class=>"btn btn-primary",:style=>"margin-bottom:15px;"%>
+  			</div>  
+			</div>
+
+    <%end%>
+  </div>
+      <!-- /.col -->
+    
+</section>

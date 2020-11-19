@@ -1,0 +1,75 @@
+
+<div class="container dboard">
+
+<p id="notice"><%= notice %></p>
+  <!-- Main content -->
+  <section class="content">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-body no-padding">
+        
+          <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">Patient Name  </label>  
+                  <div class="col-sm-7 col-md-4">
+                    <%= @patient.name %>
+                  </div>
+                </div>
+                  <div class="col-xs-12 col-md-8">
+                    <div class="form-group">
+                      
+                    </div>
+                  </div>
+              </div>        
+          </div>
+          <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">App</label>  
+                  <div class="col-sm-7 col-md-4">
+                    <%= @patient.mobile_number %>
+                  </div>
+                </div>                 
+                <div class="col-xs-12 col-md-8">
+                  <div class="form-group">
+                  
+                  </div>
+                </div>
+              </div>        
+          </div>
+
+          <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group">
+                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">Company</label>  
+                  <div class="col-sm-7 col-md-4">
+                    <%= @patient.state %>
+                  </div>
+                </div>                 
+                <div class="col-xs-12 col-md-8">
+                  <div class="form-group">
+                  
+                  </div>
+                </div>
+              </div>        
+          </div>
+            
+           <div class="row" align="center">  
+            <%= link_to 'Back',patients_path,:class=>"btn btn-primary"%>
+          </div>     
+
+                           
+        </div>
+          <!-- /.box-body -->
+        <!-- /.box -->
+      </div>
+        <!-- /.col -->
+    </div>
+      <!-- /.row -->
+  </section>
+	<!-- /.content -->
+	</div>
+
+
+

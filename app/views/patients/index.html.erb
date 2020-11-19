@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<div class="container dboard">
+<div class="row">
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<%= form_tag patients_import_path,multipart: true do %>
+					<%= file_field_tag :file %>
+					<%= submit_tag "Import CSV"  %>
+				<% end %>
+				<h3 class="box-title"> <% content_for :title, "Patient Details" %> </h3>
+				<%= link_to new_patient_path,:class=>"btn d_btn btn-success" do %>
+					Create  <i class="fa fa-plus-circle d_btn_icon" aria-hidden="true"></i>
+				<% end %>  
+				
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body table-responsive no-padding">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Patient Name </th>
+							<th>Mobile </th>
+							<th>Address </th>
+							<th>city </th>
+							<th>State </th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @patients.each do |patient| %>
+							<tr>
+								<td><%= patient.name %></td>
+								<td><%= patient.mobile_number %></td>
+								<td><%= patient.address_line1 %></td>
+								<td><%= patient.city %></td>
+								<td><%= patient.state %></td>
+								<td>
+									<%= link_to "Edit" , edit_patient_path(patient) , class: "btn btn-primary btn-sm" %>
+									<%= link_to "Show" , patient , class: "btn btn-warning btn-sm" %>
+									<%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-danger btn-sm" %>
+								</td>
+							</tr>
+						<% end %>                
+					</tbody>
+				</table>
+			</div>
+			<%= will_paginate @patients %>
+			<!-- /.box-body -->
+		</div>
+		<!-- /.box -->
+	</div>
+</div>
+</div>

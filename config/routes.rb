@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  
+  resources :patients
+
   devise_for :users
   get 'home/dashboard'
+  post 'patients/import'
   root to: 'home#index'
   devise_scope :users do
   	get 'sign_in', to: 'devise/sessions#new'
