@@ -1,7 +1,7 @@
 
 <div class="container dboard">
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
   <!-- Main content -->
   <section class="content">
     <div class="col-xs-12">
@@ -9,67 +9,99 @@
         <div class="box-body no-padding">
         
           <div class="row">
-              <div class="col-xs-12">
+            <div class="col-md-12">
+              <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">Patient Name  </label>  
-                  <div class="col-sm-7 col-md-4">
-                    <%= @patient.name %>
-                  </div>
+                  <label class="control-label " for="team_membr_lname">Patient Name  </label>                    
+                  <%= @patient.name %>                 
                 </div>
-                  <div class="col-xs-12 col-md-8">
-                    <div class="form-group">
-                      
-                    </div>
-                  </div>
-              </div>        
-          </div>
-          <div class="row">
-              <div class="col-xs-12">
+              </div>
+              <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">App</label>  
-                  <div class="col-sm-7 col-md-4">
-                    <%= @patient.mobile_number %>
-                  </div>
-                </div>                 
-                <div class="col-xs-12 col-md-8">
-                  <div class="form-group">
-                  
-                  </div>
+                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">Patient email  </label>                    
+                  <%= @patient.email %>                 
                 </div>
-              </div>        
+              </div>
+            </div>        
           </div>
 
           <div class="row">
-              <div class="col-xs-12">
+            <div class="col-md-12">
+              <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">Company</label>  
-                  <div class="col-sm-7 col-md-4">
-                    <%= @patient.state %>
-                  </div>
-                </div>                 
-                <div class="col-xs-12 col-md-8">
-                  <div class="form-group">
-                  
-                  </div>
+                  <label class="control-label " for="team_membr_lname">Mobile  </label>                    
+                  <%= @patient.mobile_number %>                 
                 </div>
-              </div>        
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">Address1  </label>                    
+                  <%= @patient.address_line1 %>                 
+                </div>
+              </div>
+            </div>        
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label " for="team_membr_lname">Address2  </label>                    
+                  <%= @patient.address_line2 %>                 
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">City  </label>                    
+                  <%= @patient.city %>                 
+                </div>
+              </div>
+            </div>        
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label " for="team_membr_lname">State  </label>                    
+                  <%= @patient.state %>                 
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">Country  </label>                    
+                  <%= @patient.country %>                 
+                </div>
+              </div>
+            </div>        
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label " for="team_membr_lname">Zip  </label>                    
+                  <%= @patient.zip %>                 
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">  </label> 
+                </div>
+              </div>
+            </div>        
           </div>
             
-           <div class="row" align="center">  
+          <div class="row" align="center">  
             <%= link_to 'Back',patients_path,:class=>"btn btn-primary"%>
           </div>     
 
                            
-        </div>
-          <!-- /.box-body -->
-        <!-- /.box -->
+        </div> <!-- /.box-body -->
       </div>
-        <!-- /.col -->
     </div>
-      <!-- /.row -->
   </section>
-	<!-- /.content -->
-	</div>
+</div>
 
 
 

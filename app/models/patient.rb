@@ -3,6 +3,9 @@ class Patient < ApplicationRecord
 	require 'activerecord-import/base'
 	require 'activerecord-import/active_record/adapters/postgresql_adapter'
 
+	
+	
+
 	def name
 		"#{self.first_name}  #{self.last_name}"
 	end

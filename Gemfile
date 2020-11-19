@@ -33,6 +33,8 @@ gem 'rails-ujs'
 gem 'devise'
 gem 'activerecord-import'
 gem 'will_paginate'
+gem 'carrierwave', '~> 2.0'
+gem 'bootstrap-datepicker-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
