@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  # get 'home/index'
+  get 'home/dashboard'
   root to: 'home#index'
   devise_scope :users do
   	get 'sign_in', to: 'devise/sessions#new'

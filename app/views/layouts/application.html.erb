@@ -8,28 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  	<nav class="bg-dark">
-		  <ul class="nav justify-content-end">
-		  	<% if user_signed_in? %>
-		  		<div class="adm">
-		  			Signed in as <%= current_user.email %>. 
-		  		</div><br>
-		  		<li class="nav-item">
-		  			<%= link_to 'Sign out', destroy_user_session_path,method: :delete %>
-		  		</li>
-		  	<% else %>
-		  		<li class="nav-item">
-        		<%= link_to "Sign In",new_user_session_path,class: "nav-link" %>
-        	</li>
-		  	<% end %>
-			  
-			  
-			</ul>
-		</nav>
-		<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+	<body>
+		<% if user_signed_in? %>
+      <%= render "layouts/header"%>
+		<%else%>
+		<%end%>
+			
+		<%= yield %>
+
   </body>
 </html>
 
