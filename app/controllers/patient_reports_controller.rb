@@ -2,15 +2,13 @@ class PatientReportsController < ApplicationController
   before_action :set_patient_report, only: [:edit, :update, :destroy, :show]
 
   def index
-    @reports = PatientReport.paginate page: params[:page], per_page: 5
+    @reports = PatientReport.all
   end
 
   def new
     @report=PatientReport.new
     @report_files = @report.patient_report_files.build
-    @patients=Patient.all.pluck(:first_name)
-    @reports=Report.all.pluck(:report_name)
-    @status=ReportStatus.all.pluck(:name)
+    
   end
 
   def create

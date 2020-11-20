@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [:edit, :update, :destroy, :show]
 
   def index
-    @patients = Patient.paginate page: params[:page], per_page: 5
+    @patients = Patient.all
   end
 
   def new

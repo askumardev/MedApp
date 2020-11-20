@@ -20,3 +20,7 @@
 
 $('.datepicker').datepicker();
 
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
