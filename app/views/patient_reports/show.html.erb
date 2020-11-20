@@ -1,0 +1,89 @@
+
+<div class="container dboard">
+
+<p id="notice"><%= notice %></p>
+<!-- Main content -->
+<section class="content">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-body no-padding">
+      
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label " for="team_membr_lname">Patient Name  </label>                    
+                <%= Patient.find_by(id:@report.patient_id).name if @report.patient_id?%>                 
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">Report  </label>                    
+                <%= Report.find_by(id:@report.report_id).report_name %>                 
+              </div>
+            </div>
+          </div>        
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label " for="team_membr_lname">Report Status  </label>                    
+                <%= ReportStatus.find_by(id:@report.report_status_id).name %>                 
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label col-sm-5 col-md-4" for="team_membr_lname">Comments  </label>                    
+                <%= @report.comments %>                 
+              </div>
+            </div>
+          </div>        
+        </div>
+
+        <div class="box-body table-responsive no-padding">
+				<table  class="table table-striped table-bordered" style="width:100%">
+					<thead>
+						<tr>
+							<th>Report Name </th>
+							<th>File </th>
+							
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @files.each do |file| %>
+							<tr>
+								<td><%=  %></td>
+								<td><%= file.avatar %></td>
+								
+								<td>
+								<%= link_to "Download", file.avatar.url, download: true ,class: "btn btn-primary btn-sm"%>
+								</td>
+							</tr>
+						<% end %>                
+					</tbody>
+				</table>
+			</div>
+
+
+        
+
+        
+
+        
+          
+        <div class="row" align="center">  
+          <%= link_to 'Back',patients_path,:class=>"btn btn-primary"%>
+        </div>     
+
+                         
+      </div> <!-- /.box-body -->
+    </div>
+  </div>
+</section>
+</div>
+
+
+

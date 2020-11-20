@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'home/dashboard'
   post 'patients/import'
   root to: 'home#index'
+  get 'download_pdf', to: "home#download_pdf"
   devise_scope :users do
   	get 'sign_in', to: 'devise/sessions#new'
 	end

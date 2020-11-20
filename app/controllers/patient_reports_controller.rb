@@ -27,6 +27,11 @@ class PatientReportsController < ApplicationController
     @report_files = @report.patient_report_files.build
   end
 
+  def show
+    @report = PatientReport.find(params[:id])
+    @files = @report.patient_report_files
+  end
+
   def set_patient_report
     @report = PatientReport.find(params[:id])
   end
