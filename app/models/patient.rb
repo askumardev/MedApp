@@ -3,6 +3,11 @@ class Patient < ApplicationRecord
 	require 'activerecord-import/base'
 	require 'activerecord-import/active_record/adapters/postgresql_adapter'
 
+	validates_presence_of :first_name, :last_name, :email, :mobile_number, :address_line1, :address_line2,
+												:city, :state, :country,:zip
+
+	validates :mobile_number, length: { is: 10 }
+
 	
 	
 
