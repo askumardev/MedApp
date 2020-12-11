@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:edit, :update, :destroy, :show]
+  before_action :set_patient, only: %i[edit update destroy show]
 
   def index
     @patients = Patient.all
@@ -10,39 +10,37 @@ class PatientsController < ApplicationController
   end
 
   def create
-		@patient = Patient.new(set_patient_params)
+    @patient = Patient.new(set_patient_params)
     if @patient.save
-			redirect_to patients_path , notice: "Patient '#{@patient.name}' saved successfully."
-		else
-			render :new
-		end
-	end
-
-  def edit
-  end
-
-  def show
-  end
-
-	def update
-    if @patient.update(set_patient_params)
-      redirect_to @patient, notice: 'Patient was successfully updated.'            
+      redirect_to patients_path, notice: "Patient '#{@patient.name}' saved successfully."
     else
-      render :edit 
+      render :new
     end
-	end
+  end
+
+  def edit; end
+
+  def show; end
+
+  def update
+    if @patient.update(set_patient_params)
+      redirect_to @patient, notice: 'Patient was successfully updated.'
+    else
+      render :edit
+    end
+  end
 
   def destroy
-		if @patient.delete
-        redirect_to patients_path, notice: 'Patient was successfully deleted.'            
+    if @patient.delete
+      redirect_to patients_path, notice: 'Patient was successfully deleted.'
     else
-      render :edit 
+      render :edit
     end
   end
-  
+
   def import
     @p = Patient.my_import(params[:file].path)
-    redirect_to patients_path,notice: "Imported successfully"
+    redirect_to patients_path, notice: 'Imported successfully'
   end
 
   def set_patient
@@ -50,8 +48,9 @@ class PatientsController < ApplicationController
   end
 
   private
-	def set_patient_params
-		params.require(:patient).permit(:first_name, :last_name, :email, :mobile_number, 
-			:address_line1, :address_line2, :city, :state, :country, :zip )
-	end
+
+  def set_patient_params
+    params.require(:patient).permit(:first_name, :last_name, :email, :mobile_number,
+                                    :address_line1, :address_line2, :city, :state, :country, :zip)
+  end
 end

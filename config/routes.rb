@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   resources :reports
   resources :patient_reports
   resources :patients
@@ -8,10 +7,10 @@ Rails.application.routes.draw do
   get 'home/dashboard'
   post 'patients/import'
   root to: 'home#index'
-  get 'download_pdf', to: "home#download_pdf"
+  get 'download_pdf', to: 'home#download_pdf'
   devise_scope :users do
-  	get 'sign_in', to: 'devise/sessions#new'
-	end
+    get 'sign_in', to: 'devise/sessions#new'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
